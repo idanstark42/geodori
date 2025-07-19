@@ -17,8 +17,7 @@ export default function WorldGuessMap() {
     fetch(geoUrl)
       .then(res => res.json())
       .then(data => {
-        const features = data.objects.ne_110m_admin_0_countries.geometries
-        setTotal(features.length)
+        setTotal(data.objects.countries.geometries.length)
       })
   }, [])
 
